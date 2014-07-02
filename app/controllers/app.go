@@ -31,7 +31,7 @@ func entriesToJson(entries []doohan.Entry) []stringMap {
 	return jsons
 }
 
-func (c App) Index() revel.Result {
+func (c App) ListEntries() revel.Result {
 	return c.RenderJson(entriesToJson(doohan.FetchEntries()))
 }
 

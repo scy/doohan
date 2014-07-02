@@ -1,2 +1,2 @@
-GET / App.Index
+GET / App.ListEntries
 POST /add App.Add
