@@ -31,7 +31,7 @@ func DB() *sqlx.DB {
 func FetchEntries() []Entry {
 	db := DB()
 	entries := []Entry{}
-	err := db.Select(&entries, `SELECT id, start, stop, running, description FROM entries_convenient`)
+	err := db.Select(&entries, `SELECT id, start, stop, running, description FROM entries_convenient LIMIT 10`)
 	if err != nil {
 		panic(err)
 	}
