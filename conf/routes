@@ -1,2 +1,5 @@
-GET / App.ListEntries
-POST /add App.Add
+GET  /1/entries App.ListEntries
+POST /1/entries App.Add
+
+GET  /          Static.Serve("web","/index.html")
+GET  /*filepath Static.Serve("web")
