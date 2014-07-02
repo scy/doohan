@@ -37,3 +37,14 @@ func FetchEntries() []Entry {
 	}
 	return entries
 }
+
+func AddEntry(description string) Entry {
+	db := DB()
+	var entry Entry
+	err := db.QueryRowx(`INSERT INTO entries (description) VALUES ($1) RETURNING id, start, description`, description).StructScan(&entry)
+	if err != nil {
+		panic(err)
+	}
+	entry.Running = true
+	return entry
+}

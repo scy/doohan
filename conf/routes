@@ -1,1 +1,2 @@
 GET / App.Index
+POST /add App.Add

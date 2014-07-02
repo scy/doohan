@@ -6,6 +6,7 @@ func init() {
 	revel.Filters = []revel.Filter{
 		revel.PanicFilter,
 		revel.RouterFilter,
+		revel.ParamsFilter,
 		revel.ActionInvoker,
 	}
 }

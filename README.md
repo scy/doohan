@@ -16,11 +16,9 @@ Okay, whatever. You need Postgres running with a `doohan` user (password `doohan
     goose up
     revel run github.com/scy/doohan
 
-Call http://localhost:9000/ to see a list of timetracking entries. You can’t insert them right now, though. Haha! Use something like
+Call http://localhost:9000/ to see a list of timetracking entries. To insert them, POST to http://localhost:9000/add and supply a `description` parameter, like:
 
-    INSERT INTO entries (description) VALUES ('geez this sucks');
-
-if you want to add something. Yes, adding entries is next on my list.
+    curl -v -d description='trying to get Doohan to work' http://localhost:9000/add
 
 ## Database stability
 
